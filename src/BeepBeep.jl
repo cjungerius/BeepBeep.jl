@@ -20,7 +20,7 @@ sounds = (ping="microwave_ping_mono.wav",
 
 function beep(n::Int=1)
 
-    (n < length(sounds) && n > 0) ? nothing : n = (println("Out of range: Playing random sound!"); rand(1:length(sounds)));    
+    (n < length(sounds) && n > 0) ? nothing : n = (@warn("Out of range: Playing random sound!"); rand(1:length(sounds)));    
     
     soundpath = joinpath(sounddir, sounds[n])
     wavplay(soundpath)
@@ -37,14 +37,14 @@ function beep(n::String)
         soundpath = Downloads.download(n,joinpath(mktempdir(),"sound.wav"))
         wavplay(soundpath)
     else
-        println("Cannot parse string as sound name, filepath, or url; playing random sound!")
+        @warn("Cannot parse string as sound name, filepath, or url; playing random sound!")
         n=rand(1:length(sounds))
         beep(n)
     end
 end
 
 function beep(n::Any...)
-    println("Unknown argument(s): playing random sound!")
+    @warn("Unknown argument(s): playing random sound!")
     n = rand(1:length(sounds))
     beep(n)
 end
