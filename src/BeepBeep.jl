@@ -2,7 +2,7 @@ module BeepBeep
 using WAV
 using Downloads
 using Random
-export beep
+export beep, @beep
 
 sounddir = joinpath(splitdir(dirname(pathof(BeepBeep)))[1], "sounds")
 
@@ -45,5 +45,23 @@ function beep(n::Any...)
     n = rand(1:11)
     beep(n)
 end
-    
+
+
+macro beep(n, exp)
+    quote
+        local val = $(esc(exp))
+        beep($n)
+        val
+    end
+end
+
+macro beep(exp)
+    quote
+        local val = $(esc(exp))
+        local n = rand(1:length($sounds))
+        beep(n)
+        val
+    end
+end
+
 end
