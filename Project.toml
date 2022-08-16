@@ -1,14 +1,16 @@
-name = "Beep"
+name = "Beeper"
 uuid = "97dd0070-d6c0-43ac-b134-ca84cdbd343e"
 authors = ["Chris Jungerius <cjungerius@gmail.com> and contributors"]
 version = "0.1.0"
 
 [deps]
 Downloads = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 WAV = "8149f6b0-98f6-5db9-b78f-408fbbb8ef88"
 
 [compat]
 julia = "1"
+WAV = "1"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

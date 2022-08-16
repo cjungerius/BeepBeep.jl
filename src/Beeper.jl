@@ -1,10 +1,10 @@
-module Beep
+module Beeper
 using WAV
 using Downloads
 using Random
 export beep
 
-sounddir = joinpath(splitdir(dirname(pathof(Beep)))[1], "sounds")
+sounddir = joinpath(splitdir(dirname(pathof(Beeper)))[1], "sounds")
 
 sounds = (ping="microwave_ping_mono.wav",
     coin="smb_coin.wav",
@@ -40,8 +40,8 @@ function beep(n::String)
     end
 end
 
-function beep(n::Any)
-    println("Unknown argument: playing random sound!")
+function beep(n::Any...)
+    println("Unknown argument(s): playing random sound!")
     n = rand(1:11)
     beep(n)
 end

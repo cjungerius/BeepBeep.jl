@@ -1,6 +1,6 @@
-using Beep
+using Beeper
 using Test
 
-@testset "Beep.jl" begin
+@testset "Beeper.jl" begin
     # Write your tests here.
 end
