@@ -1,10 +1,10 @@
-module Beeper
+module BeepBeep
 using WAV
 using Downloads
 using Random
 export beep
 
-sounddir = joinpath(splitdir(dirname(pathof(Beeper)))[1], "sounds")
+sounddir = joinpath(splitdir(dirname(pathof(BeepBeep)))[1], "sounds")
 
 sounds = (ping="microwave_ping_mono.wav",
     coin="smb_coin.wav",

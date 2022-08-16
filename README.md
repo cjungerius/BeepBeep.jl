@@ -1,4 +1,4 @@
-# Beeper
+# BeepBeep
 Julia implementation of the R package [`beepR`](https://github.com/rasmusab/beepr): A utility which can play audio notifications when, e.g., your code has finished running. 
 
 ## Usage
