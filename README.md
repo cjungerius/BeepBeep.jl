@@ -19,5 +19,5 @@ Arguments
 10. "facebook"
 11. "sword"
 
-If `sound` does not match any of the sounds above, or is a valid path, a random sound will be played.
+If `sound` does not match any of the sounds above, or is not a valid path/URL, a random sound will be played.
 
